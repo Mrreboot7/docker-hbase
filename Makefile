@@ -8,15 +8,15 @@ build:
 	docker build -t myy92715/hbase-regionserver:$(current_branch) ./hregionserver
 	docker build -t myy92715/hbase-standalone:$(current_branch) ./standalone
 push:
-	docker push -t myy92715/hbase-base:$(current_branch)
-	docker push -t myy92715/hbase-master:$(current_branch)
-	docker push -t myy92715/hbase-regionserver:$(current_branch)
-	docker push -t myy92715/hbase-standalone:$(current_branch)
+	docker push myy92715/hbase-base:$(current_branch)
+	docker push myy92715/hbase-master:$(current_branch)
+	docker push myy92715/hbase-regionserver:$(current_branch)
+	docker push myy92715/hbase-standalone:$(current_branch)
 pull:
-	docker pull -t myy92715/hbase-base:$(current_branch)
-	docker pull -t myy92715/hbase-master:$(current_branch)
-	docker pull -t myy92715/hbase-regionserver:$(current_branch)
-	docker pull -t myy92715/hbase-standalone:$(current_branch)
+	docker pull myy92715/hbase-base:$(current_branch)
+	docker pull myy92715/hbase-master:$(current_branch)
+	docker pull myy92715/hbase-regionserver:$(current_branch)
+	docker pull myy92715/hbase-standalone:$(current_branch)
 wordcount:
 	docker run --network ${DOCKER_NETWORK} --env-file ${ENV_FILE} myy92715/hadoop-base:$(current_branch) hdfs dfs -mkdir -p /input/
 	docker run --network ${DOCKER_NETWORK} --env-file ${ENV_FILE} myy92715/hadoop-base:$(current_branch) hdfs dfs -copyFromLocal -f /opt/hadoop-2.7.4/README.txt /input/
