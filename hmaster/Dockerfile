@@ -1,4 +1,4 @@
-FROM bde2020/hbase-base:1.0.0-hbase1.2.6
+FROM myy92715/hbase-base:2.2.3-hadoop3.2.1-java8
 
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
