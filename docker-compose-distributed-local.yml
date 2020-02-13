@@ -58,7 +58,7 @@ services:
       - 8188:8188
   
   zoo:
-    image: zookeeper:3.4.10
+    image: zookeeper:latest
     container_name: zoo
     environment:
       ZOO_MY_ID: 1
